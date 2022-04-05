@@ -58,6 +58,7 @@
 					<label for="type_photoshoot">Schedule a photoshoot:</label><input type="checkbox" name="type" id="type_photoshoot" value="Schedule">
 					<label for="type_question">Ask a question:</label><input type="checkbox" name="type" id="type_question" value="Question" checked>
 					<label for="type_other">Other:</label><input type="checkbox" name="type" id="type_other" value="Other">
+					<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                     <input type="submit" value="Submit">
                 </fieldset>
               </form>
@@ -69,5 +70,16 @@
 			<i class="fa-solid fa-laptop-code"></i>Made by Gwen McKee, 2022 <a href="https://www.linkedin.com/in/gwenmckee/" aria-label="Gwen's LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
 		</div>
 	</footer>
+	
+
+	<script src="https://www.google.com/recaptcha/api.js?render={your-site-key}"></script>
+	<script>
+		grecaptcha.ready(function () {
+			grecaptcha.execute('{your-site-key}', {action: 'submit'}).then(function (token) {
+				console.info("got token: " + token);
+				document.getElementById('g-recaptcha-response').value = token;
+			});
+		});
+	</script>
 </body>
 </html>
