@@ -13,6 +13,7 @@ body {
 
 p {
     margin: 10px 0;
+    font-size: 24px;
 }
 
 .skew {
@@ -29,7 +30,8 @@ p {
     }
   }
 
-  .animate:hover {
+  /*animate:hover? changed because of grading comments*/
+  .animate {
     animation:
       bounce 300ms
       alternate infinite
@@ -92,6 +94,7 @@ nav li {
 
 nav li a{
     color: #ffffff;
+    font-size: 20px;
 }
 
 .bold {
@@ -142,7 +145,7 @@ input, textarea {
 h1 {
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 45px;
 }
 
 legend {
@@ -171,6 +174,55 @@ form {
     justify-self: center;
 
 }
+
+/*make look nicer*/
+.flip-card {
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+.flip-card:focus .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+.flip-card-outer, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+.flip-card-outer {
+    background-color: #bbb;
+    color: black;
+  }
+  
+.flip-card-back {
+    background-color: #008080;
+    color: white;
+    transform: rotateY(180deg);
+    padding-top: 10px;
+  }
+
 
 /*is mobile right size? mobile first*/
 @media screen and (min-width: 600px) {
@@ -206,6 +258,19 @@ form {
     img:hover {
         transform: scale(1.15);
       }
+
+    p {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    nav li a{
+        font-size: 16px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -217,5 +282,11 @@ form {
         img:hover {
             transform: none;
         }
+    }
+        /*flip card back or overlay? check if prefers reduced motion works*/
+        .team-content-overlay {
+            -webkit-transition: 0 !important;
+            -o-transition: 0 !important;
+            transition: 0 !important;
     }
     
