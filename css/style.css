@@ -21,6 +21,11 @@ p {
     margin: 40px 0px;
 }
 
+.dark {
+    background-color: #303030;
+    color: white;
+}
+
 @keyframes bounce {
     from {
       transform: translateY(0px);
