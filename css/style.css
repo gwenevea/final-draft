@@ -24,6 +24,18 @@ p {
 .dark-mode {
     background-color: #303030;
     color: white;
+    border: white;
+}
+
+.dark-mode input, .dark-mode textarea {
+    background-color: #e0e0e0;
+    color: #303030;
+    border: white;
+}
+
+#darkmode {
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 @keyframes bounce {
