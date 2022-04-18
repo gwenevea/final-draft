@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*notes: you MUST ADD A PARALLAX IMAGE*/
+
 
 body {
     font-family: 'Nunito', sans-serif;
@@ -14,6 +16,26 @@ body {
 p {
     margin: 10px 0;
     font-size: 24px;
+}
+
+#parallax {
+    background-image: url("../images/other16.jpg");
+    background-color: #008080;
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.save {
+    margin-top: 220px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.32);
+    padding: 40px;
+    border-radius: 20px;
 }
 
 .skew {
@@ -241,8 +263,8 @@ form {
   }
 
 
-/*is mobile right size? mobile first*/
-@media screen and (min-width: 600px) {
+/*normal desktop, was originally 600*/
+@media screen and (min-width: 1025px) {
     body {
         padding: 0 100px 0 100px;
         background-image: none;
@@ -290,6 +312,18 @@ form {
     }
 }
 
+/*tablet - unsure if right size*/
+@media screen and (min-width: 768px) {
+    
+}
+
+/*large desktop - unsure if right size*/
+@media screen and (min-width: 1200px) {
+    
+}
+
+
+
 @media (prefers-reduced-motion: reduce) {
         .animate {
             /*unsure if works*/
@@ -301,9 +335,13 @@ form {
         }
     }
         /*flip card back or overlay? check if prefers reduced motion works*/
-        .team-content-overlay {
+        .flip-card, .flip-card-inner, .flip-card-back, .flip-card:focus, .flip-card:hover {
             -webkit-transition: 0 !important;
             -o-transition: 0 !important;
             transition: 0 !important;
+    }
+
+    #parallax {
+        background-attachment: initial;
     }
     
